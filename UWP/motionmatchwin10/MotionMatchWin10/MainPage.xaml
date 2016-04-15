@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="MotionMatchWin10.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MotionMatchWin10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="12">
+            <TextBlock Text="Accelerometer" FontWeight="Bold" Margin="12, 0, 12, 0"/>
+            <StackPanel Orientation="Horizontal" Margin="12, 0, 12, 0" HorizontalAlignment="Stretch">
+                <TextBlock x:Name="lblAccX" Text="X: 0.0000" Margin="0, 0, 24, 0"/>
+                <TextBlock x:Name="lblAccY" Text="Y: 0.0000" Margin="0, 0, 24, 0"/>
+                <TextBlock x:Name="lblAccZ" Text="Z: 0.0000" Margin="0"/>
+            </StackPanel>
+            <TextBlock Text="Gyroscope" FontWeight="Bold" Margin="12, 0, 12, 0"/>
+            <StackPanel Orientation="Horizontal" Margin="12, 0, 12, 0" HorizontalAlignment="Stretch">
+                <TextBlock x:Name="lblGyroX" Text="X: 0.0000" Margin="0, 0, 24, 0"/>
+                <TextBlock x:Name="lblGyroY" Text="Y: 0.0000" Margin="0, 0, 24, 0"/>
+                <TextBlock x:Name="lblGyroZ" Text="Z: 0.0000" Margin="0"/>
+            </StackPanel>
+            <TextBlock Text="Status" FontWeight="Bold" Margin="12, 12, 12, 0"/>
+            <TextBlock x:Name="lblStatus" Text="" Margin="12, 0, 12, 0"/>
+            <Button x:Name="btnStart" Content="Start Activity" Margin="12" 
+                    FontSize="32" 
+                    Background="Green" Foreground="White"
+                    HorizontalAlignment="Stretch" 
+                    Click="btnStart_Click"/>
+            <ToggleSwitch x:Name="switchInputMode" Margin="12"
+                          Header="Sensor Source" IsOn="True"
+                          OffContent="Phone" OnContent="Band" />
+            <ToggleSwitch x:Name="switchQuality" Margin="12"
+                          Header="Motion Quality" IsOn="True"
+                          OffContent="Bad" OnContent="Good" />
+            <ToggleSwitch x:Name="switchMoCapMode" Margin="12"
+                          Header="Motion Capture Mode" IsOn="True"
+                          OffContent="Recording" OnContent="Training" />
+        </StackPanel>
+    </Grid>
+</Page>
