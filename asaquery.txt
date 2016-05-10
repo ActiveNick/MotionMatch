@@ -1,0 +1,94 @@
+SELECT
+     guid, 
+     avg(X) as X10Avg,
+     stdev(X) as X10Stdev,
+     avg(Y) as Y10Avg,
+     stdev(Y) as Y10Stdev,
+     avg(Z)  as Z10Avg,
+     stdev(Z)  as Z10Stdev,
+	 avg(gX) as gX10Avg,
+     stdev(gX) as gX10Stdev,
+     avg(gY) as gY10Avg,
+     stdev(gY) as gY10Stdev,
+     avg(gZ)  as gZ10Avg,
+     stdev(gZ)  as gZ10Stdev       
+INTO
+    toBlobSamples10Sec
+FROM
+    fromBand
+GROUP BY TumblingWindow(second, 10), guid
+
+
+SELECT
+     guid, 
+     avg(X) as X1Avg,
+     stdev(X) as X1Stdev,
+     avg(Y) as Y1Avg,
+     stdev(Y) as Y1Stdev,
+     avg(Z)  as Z1Avg,
+     stdev(Z)  as Z1Stdev,
+	 avg(gX) as gX1Avg,
+     stdev(gX) as gX1Stdev,
+     avg(gY) as gY1Avg,
+     stdev(gY) as gY1Stdev,
+     avg(gZ)  as gZ1Avg,
+     stdev(gZ)  as gZ1Stdev       
+INTO
+    toBlobSamples1Sec
+FROM
+    fromBand
+GROUP BY TumblingWindow(second, 1), guid
+
+SELECT
+     guid, 
+     avg(X) as X2Avg,
+     stdev(X) as X2Stdev,
+     avg(Y) as Y2Avg,
+     stdev(Y) as Y2Stdev,
+     avg(Z)  as Z2Avg,
+     stdev(Z)  as Z2Stdev,
+	 avg(gX) as gX2Avg,
+     stdev(gX) as gX2Stdev,
+     avg(gY) as gY2Avg,
+     stdev(gY) as gY2Stdev,
+     avg(gZ)  as gZ2Avg,
+     stdev(gZ)  as gZ2Stdev       
+INTO
+    toBlobSamples2Sec
+FROM
+    fromBand
+GROUP BY TumblingWindow(second, 2), guid
+
+SELECT
+     guid, 
+     avg(X) as X5Avg,
+     stdev(X) as X5Stdev,
+     avg(Y) as Y5Avg,
+     stdev(Y) as Y5Stdev,
+     avg(Z)  as Z5Avg,
+     stdev(Z)  as Z5Stdev,
+	 avg(gX) as gX5Avg,
+     stdev(gX) as gX5Stdev,
+     avg(gY) as gY5Avg,
+     stdev(gY) as gY5Stdev,
+     avg(gZ)  as gZ5Avg,
+     stdev(gZ)  as gZ5Stdev       
+INTO
+    toBlobSamples5Sec
+FROM
+    fromBand
+GROUP BY TumblingWindow(second, 5), guid
+
+
+SELECT
+     id, 
+     [User],
+     ActivityName,
+     [TimeStamp],
+     TrackedBodyPart,
+	 Quality       
+INTO
+    toBlobMotions
+FROM
+    fromBand
+WHERE id != ''
