@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageAccounts_motionmatchstorage_name": {
+            "defaultValue": "motionmatchstorage",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/357e6482-0105-4cc8-816e-672fc6b76abb/resourceGroups/motionmatch/providers/Microsoft.Storage/storageAccounts/motionmatchstorage'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[parameters('storageAccounts_motionmatchstorage_name')]",
+            "apiVersion": "2015-06-15",
+            "location": "eastus2",
+            "tags": {},
+            "properties": {
+                "accountType": "Standard_LRS"
+            },
+            "dependsOn": []
+        }
+    ]
+}

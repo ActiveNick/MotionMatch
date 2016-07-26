@@ -6,3 +6,6 @@ From there, the data was imported into Azure ML Studio to train a model based on
 In training mode, the app lets the user go through the same motion, and then checks the recorded motion against the Azure ML model, telling the user if that was a “Good” or “Bad” motion, showing the results on the phone screen and using a text-to-speech voice prompt.
 
 This demo application was built by Nick Landry (@ActiveNick), Jesus Aguilar (@giventocode), James Quick (@jamesqquick) and Dan Stolts (@ITProGuru) from Microsoft as part of a 2-day internal hackathon in NYC on April 13-14 2016.
+
+## Deployment Note
+When deploying services in  Azure you will need to manually add IoT hub.  This because IoT hub is not available in all regions and cannot use the same region as the other components in the project. 
